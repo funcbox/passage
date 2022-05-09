@@ -1,13 +1,13 @@
 PREFIX ?= /usr
 DESTDIR ?=
-BINDIR ?= $(PREFIX)/bin
-LIBDIR ?= $(PREFIX)/lib
+BINDIR ?= $(PREFIX)/local/bin
+LIBDIR ?= $(PREFIX)/local/lib
 
 PLATFORMFILE := src/platform/$(shell uname | cut -d _ -f 1 | tr '[:upper:]' '[:lower:]').sh
 
-BASHCOMPDIR ?= $(PREFIX)/share/bash-completion/completions
-ZSHCOMPDIR ?= $(PREFIX)/share/zsh/site-functions
-FISHCOMPDIR ?= $(PREFIX)/share/fish/vendor_completions.d/
+BASHCOMPDIR ?= $(PREFIX)/local/share/bash-completion/completions
+ZSHCOMPDIR ?= $(PREFIX)/local/share/zsh/site-functions
+FISHCOMPDIR ?= $(PREFIX)/local/share/fish/vendor_completions.d/
 
 ifneq ($(WITH_ALLCOMP),)
 WITH_BASHCOMP := $(WITH_ALLCOMP)

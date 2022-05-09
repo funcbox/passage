@@ -9,12 +9,17 @@ To install on a macOS system with Homebrew type
     make install PREFIX="$(brew --cellar)/passage/$(git describe --tags)"
     brew link passage
 
+To install on macOS M1
+ sudo mkdir /usr/local/share/zsh
+ sudo mkdir /usr/local/share/zsh/site-functions
+ sudo make install
+
 The makefile is aware of the following environment variables:
 
 PREFIX      default: /usr
 DESTDIR     default: 
-BINDIR      default: $(PREFIX)/bin
-LIBDIR      default: $(PREFIX)/lib
+BINDIR      default: $(PREFIX)/local/bin
+LIBDIR      default: $(PREFIX)/local/lib
 
 -- Completion Files --
 
